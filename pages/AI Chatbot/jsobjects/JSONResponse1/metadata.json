@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "682466d07c42fd077a7024ff_35bc5363-579e-4c47-8f65-78aeb139f558",
+  "id": "AI Chatbot_JSONResponse1",
+  "unpublishedCollection": {
+    "name": "JSONResponse1",
+    "pageId": "AI Chatbot",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "chatHistory",
+        "value": "[]"
+      }
+    ]
+  }
+}

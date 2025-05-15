@@ -1,0 +1,61 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 28,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{\n{\nchatHistory:JSONResponse1.chatHistory\n}\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "events": [],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "3ls563xncp",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 31,
+  "mobileLeftColumn": 3,
+  "mobileRightColumn": 26,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 15.171875,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 33,
+  "srcDoc": {
+    "css": "body {\n  font-family: sans-serif;\n  background-color: var(--appsmith-theme-backgroundColor);\n  color: var(--appsmith-theme-primaryColor);\n  size: 16px;\n}\n\n.chat-widget {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  background-color: #2e2e2e;\n}\n\n.messages-container {\n  flex: 1;\n  position: absolute;\n  top: 0;\n  overflow-y: auto;\n  padding: 16px;\n  width: 95%;\n  height: 100%;\n}\n\n.content {\n  margin: 4px 12px;\n  border: solid 1px grey;\n  border-radius: 4px;\n  padding: 4px 12px;\n}\n\n.user-message {\n  color: black;\n}",
+    "html": "<!-- Chat widget container -->\n<div class=\"chat-widget\" id=\"chat-widget\">\n <div class=\"messages-container\" id=\"messages-container\">\n   <!-- Messages will be dynamically inserted here -->\n </div>\n</div>",
+    "js": "const messagesContainer = document.getElementById('messages-container');\nfunction renderMessage(message, isUser) {\n  const messageElement = document.createElement('div');\n  messageElement.className = 'message ' + (isUser ? 'user-message' : '');\n  messageElement.innerHTML = message || '';\n  messagesContainer.appendChild(messageElement);\n}\nfunction updateMessages() {\n  const chatHistory = appsmith.model.chatHistory || [];\n  if (!chatHistory[0]?.content) return;\n  messagesContainer.innerHTML = '';\n  chatHistory.forEach(msg => renderMessage(msg.content, msg.role === 'user'));\n}\nappsmith.onReady(() => {\n  appsmith.onModelChange(() => {\n    updateMessages();\n  });\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 0,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "body{\n\tfont-family: sans-serif;\n\tbackground-color: var(--appsmith-theme-backgroundColor);\n\tcolor: var(--appsmith-theme-primaryColor);\n\tsize: 16px\n}\n  .chat-widget {\n    display: flex;\n    flex-direction: column;\n    height: 100%;\n\t\tbackground-color: #2e2e2e\n  }\n\n  .messages-container {\n    flex: 1;\n\t\tposition: absolute;\n    top: 0;\n    overflow-y: auto;\n    padding: 16px;\n\t\twidth: 95%;\n\t\theight: 100%\n  }\n\n.content {\n\tmargin: 4px 12px;\n\tborder: solid 1px grey;\n\tborder-radius: 4px;\n\tpadding: 4px 12px\n}\n\n.user-message {\n\tcolor: black\n}\n",
+    "html": "<!-- Chat widget container -->\n<div class=\"chat-widget\" id=\"chat-widget\">\n <div class=\"messages-container\" id=\"messages-container\">\n   <!-- Messages will be dynamically inserted here -->\n </div>\n</div>",
+    "js": "const messagesContainer = document.getElementById('messages-container');\n\nfunction renderMessage(message, isUser) {\n\tconst messageElement = document.createElement('div');\n\tmessageElement.className = 'message ' + (isUser ? 'user-message' : '');\n\tmessageElement.innerHTML = message || '';\n\tmessagesContainer.appendChild(messageElement)\n}\n\nfunction updateMessages() {\n\tconst chatHistory = appsmith.model.chatHistory || [];\n\tif (!chatHistory[0]?.content) return;\n\n\tmessagesContainer.innerHTML = '';\n\tchatHistory.forEach(msg => renderMessage(msg.content, msg.role === 'user'));\n}\n\nappsmith.onReady(() => {\n\tappsmith.onModelChange(() => {\n\t\tupdateMessages();\n\t});\n});\n"
+  },
+  "version": 1,
+  "widgetId": "sshckt7xnn",
+  "widgetName": "Custom1"
+}
