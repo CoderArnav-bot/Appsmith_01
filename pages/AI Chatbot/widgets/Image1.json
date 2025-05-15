@@ -1,13 +1,10 @@
 {
   "animateLoading": true,
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "1.5rem",
   "bottomRow": 114,
-  "boxShadow": "none",
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
   "defaultImage": "https://narrato.io/blog/wp-content/uploads/2024/05/9948c820beebba894855272c667c9ad6_11_43_05_28_05_2024.jpeg",
   "dynamicBindingPathList": [
-    {
-      "key": "borderRadius"
-    },
     {
       "key": "image"
     }
@@ -26,7 +23,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "jlky5uqo17",
-  "leftColumn": 0,
+  "leftColumn": 1,
   "maxZoomLevel": 1,
   "mobileBottomRow": 72,
   "mobileLeftColumn": 15,
@@ -39,7 +36,7 @@
   "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 42,
+  "rightColumn": 34,
   "topRow": 49,
   "type": "IMAGE_WIDGET",
   "version": 1,
