@@ -1,5 +1,5 @@
 export default {
-
+// Adding chatHistory Object
 	chatHistory: [],
 
 	async sendMessage(){
@@ -10,5 +10,4 @@ export default {
 		resetWidget('Input1')
 		return this.chatHistory;
 	}
-	
 }
