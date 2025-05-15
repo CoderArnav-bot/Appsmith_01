@@ -12,9 +12,14 @@
       "key": "image"
     }
   ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "dynamicTriggerPathList": [],
-  "enableDownload": false,
-  "enableRotation": false,
+  "enableDownload": true,
+  "enableRotation": true,
   "flexVerticalAlignment": "start",
   "image": "{{Api2.data}}",
   "imageShape": "RECTANGLE",
@@ -28,7 +33,8 @@
   "mobileRightColumn": 27,
   "mobileTopRow": 60,
   "needsErrorInfo": false,
-  "objectFit": "cover",
+  "objectFit": "contain",
+  "onClick": "{{}}",
   "parentColumnSpace": 15.171875,
   "parentId": "0",
   "parentRowSpace": 10,
