@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 28,
+  "bottomRow": 35,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n{\nchatHistory:JSONResponse1.chatHistory\n}\n}}",
   "dynamicBindingPathList": [
@@ -48,7 +48,7 @@
     "js": "const messagesContainer = document.getElementById('messages-container');\nfunction renderMessage(message, isUser) {\n  const messageElement = document.createElement('div');\n  messageElement.className = 'message ' + (isUser ? 'user-message' : '');\n  messageElement.innerHTML = message || '';\n  messagesContainer.appendChild(messageElement);\n}\nfunction updateMessages() {\n  const chatHistory = appsmith.model.chatHistory || [];\n  if (!chatHistory[0]?.content) return;\n  messagesContainer.innerHTML = '';\n  chatHistory.forEach(msg => renderMessage(msg.content, msg.role === 'user'));\n}\nappsmith.onReady(() => {\n  appsmith.onModelChange(() => {\n    updateMessages();\n  });\n});"
   },
   "theme": "{{appsmith.theme}}",
-  "topRow": 0,
+  "topRow": 7,
   "type": "CUSTOM_WIDGET",
   "uncompiledSrcDoc": {
     "css": "body{\n\tfont-family: sans-serif;\n\tbackground-color: var(--appsmith-theme-backgroundColor);\n\tcolor: var(--appsmith-theme-primaryColor);\n\tsize: 16px\n}\n  .chat-widget {\n    display: flex;\n    flex-direction: column;\n    height: 100%;\n\t\tbackground-color: #2e2e2e\n  }\n\n  .messages-container {\n    flex: 1;\n\t\tposition: absolute;\n    top: 0;\n    overflow-y: auto;\n    padding: 16px;\n\t\twidth: 95%;\n\t\theight: 100%\n  }\n\n.content {\n\tmargin: 4px 12px;\n\tborder: solid 1px grey;\n\tborder-radius: 4px;\n\tpadding: 4px 12px\n}\n\n.user-message {\n\tcolor: black\n}\n",
